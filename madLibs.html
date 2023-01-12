@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>madLibs</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+  <style>
+
+    h1 {
+      font-size: 75px;
+      color: red;
+    }
+
+    #questions {
+      font-size: 20px;
+      color: gold;
+    }
+
+    #results {
+      font-size: 30px;
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <div align='center'>
+    <h1>madLibs</h1>
+  </div><br>
+
+  <div id="questions" align='center'>
+    <label>Enter a color: <input type="text" id="color"></label><br><br>
+    <label>Enter a noun: <input type="text" id="noun"></label><br><br>
+    <label>Enter a celebrity: <input type="text" id="celebrity"></label>
+  </div><br>
+
+  <div align='center'>
+    <button type='button' value="Submit" onclick="madLib()">
+      Submit
+    </button>
+
+    <button type="button" id="Demos">
+      <a href="demos.php">Back</a>
+    </button>
+    
+  </div><br>
+
+  <div id='results' align='center'>
+    <script>
+
+      function madLib() {
+        document.getElementById("results").innerHTML = "";
+        
+        const color = document.getElementsByTagName('input')[0].value;
+        const noun = document.getElementsByTagName('input')[1].value;
+        const celebrity = document.getElementsByTagName('input')[2].value;
+        
+        document.getElementById("results").innerHTML +=
+        "Poem:<br> Roses are " + color + "<br>"
+        + noun + "s are blue <br>"
+        + "I love " + celebrity + "!";
+      }
+
+    </script>
+  </div>
+
+</body>

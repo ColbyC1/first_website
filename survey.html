@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Survey</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <style>
+
+        h1 {
+          font-size: 75px;
+          color: red;
+      }
+
+      #questions {
+          font-size: 15px;
+          color: gold;
+      }
+
+    </style>
+</head>
+<body>
+
+    <div align='center'>
+        <h1>Survey Questions</h1>
+    </div>
+
+    <div id="questions" align='left'>
+        <!--questions-->
+    </div>
+
+    <div id="buttons" align='center'>
+        <button id="submit">Submit Survey</button>
+
+        <button type="button" onclick="surveyAnswers()">
+            Show My Answers
+        </button>
+    </div><br>
+
+    <div id="results">
+        <script lang="JavaScript">
+            let num = 1;
+            
+            function surveyAnswers() {
+                document.getElementById("results").innerHTML = "";
+                var ele = document.getElementsByTagName('input');
+
+                for (i = 0; i < ele.length; i++) {
+                    if (ele[i].type === "radio") {
+                        if (ele[i].checked) {
+                            document.getElementById("results").innerHTML
+                            += num++ + ": " + ele[i].value + "<br>";
+                        }
+                    }
+                }
+
+            }
+        </script>
+    </div>
+    <script src="surveyScript.js"></script>
+</body>
+</html>
